@@ -471,6 +471,7 @@ img {
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: -1;
     /* height: calc(100% - 40px); */
 }
 
@@ -484,6 +485,7 @@ img {
     font-family: 'helvetica';
     font-weight: bold;
     line-height: 1;
+    z-index: -1;
 }
 
 .journey__progress {
@@ -799,7 +801,7 @@ img {
 
 
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1599px) {
 
     h1,
     .h1 {
@@ -852,7 +854,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1365px) {
 
     .journey-head::after,
     .journey__card>.row::after {
@@ -869,8 +871,28 @@ img {
         padding: 60px 80px 60px 50px;
     }
 
+    .journey__card .row .col-lg-6:nth-child(1) img {
+        max-height: 60px;
+    }
+
+    .journey__card-wrap .h2 {
+        font-size: 35px !important;
+        line-height: 45px;
+    }
+
+    .journey__card-wrap .h4 {
+        font-size: 20px !important;
+        line-height: 30px;
+    }
+
+    .journey__card-wrap .h5 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
     .journey__card {
-        padding: 76px 76px 130px 76px;
+        min-height: 500px;
+        padding: 36px 36px 130px 36px;
     }
 
     .exp-cont {
@@ -929,7 +951,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1199px) {
 
     h3,
     .h3 {
@@ -977,7 +999,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
     .mission-content {
         padding-inline: 60px;
         padding-block: 50px 100px;
@@ -1048,6 +1070,70 @@ img {
     .footer-nav {
         gap: 20px;
     }
+
+    /* journey responsiveness */
+    .journey__content-wrap {
+        background-color: var(--secondary_color-1000);
+    }
+
+    .journey__card {
+        position: relative;
+        border-radius: 0;
+        padding-inline: 0 !important;
+        display: flex;
+        gap: 40px;
+        z-index: 2;
+        overflow: visible;
+        background-color: transparent;
+    }
+
+    .journey__card::before {
+        content: attr(data-year);
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary_color-800);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+
+    .journey_am::after,
+    .journey__card>.row::after,
+    .journey__content-wrap .journey__card:nth-child(3)::after {
+        content: unset;
+    }
+
+    .journey__card::after {
+        content: '';
+        height: 100%;
+        width: 1px;
+        background: var(--secondary_color-800);
+        position: absolute;
+        left: 25px;
+        top: 50px;
+        z-index: -1;
+    }
+
+    .journey__progress {
+        display: none;
+    }
+
+    .journey_am div {
+        padding-block: 13px;
+        margin: 0;
+    }
+
+    .journey_am div:nth-child(1),
+    .journey_am div:nth-child(3) {
+        border-block: 1px solid var(--secondary_color-800);
+    }
+
+
+
+    /* journey responsiveness ends */
 }
 
 @media only screen and (max-width: 767px) {
@@ -1121,7 +1207,7 @@ img {
     }
 
     .journey__card {
-        padding: 30px;
+        padding: 30px 30px 100px 30px;
     }
 
     .journey__card .row .col-lg-6:nth-child(1) img {
@@ -1236,11 +1322,28 @@ img {
     .button__ .button-icon {
         --size: 34px;
     }
+
+    .journey__progress {
+        margin-bottom: 30px;
+    }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 480px) {
     .nav-logo {
         font-size: 24px;
         line-height: 34px;
+    }
+
+    .journey__card {
+        gap: 15px;
+    }
+
+    .journey__card .row .col-lg-6:nth-child(1) img {
+        max-height: 50px;
+    }
+
+    .journey__card-wrap .h5 {
+        font-size: 16px !important;
+        line-height: 26px;
     }
 }
